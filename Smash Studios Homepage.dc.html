@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@400;500;600;700&family=Archivo+Narrow:wght@500;600;700&display=swap" rel="stylesheet">
+<script src="./image-slot.js"></script>
+<style>
+  html, body { margin:0; padding:0; background:#0C0B0A; }
+  body { font-family: 'Archivo', system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+  * { box-sizing: border-box; }
+  a { color:#FF3B20; text-decoration:none; }
+  a:hover { color:#F3EDE3; }
+  @keyframes smash-marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+  @keyframes smash-blink { 0%,100% { opacity:1; } 50% { opacity:0.25; } }
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": ["LocalBusiness", "MusicVenue"],
+      "@id": "https://smashstudios.com/#nyc",
+      "name": "Smash Studios — New York City",
+      "foundingDate": "1989",
+      "description": "Recording, rehearsal, showcase and production studios in Midtown Manhattan. Neve and API signal chain, multiple live rooms, iso booths, vintage outboard gear, and a 65x26 ft soundstage.",
+      "address": { "@type": "PostalAddress", "streetAddress": "320 W 37th St, 11th Floor", "addressLocality": "New York", "addressRegion": "NY", "postalCode": "10018", "addressCountry": "US" },
+      "telephone": "+1-212-561-7777",
+      "url": "https://smashstudios.com/new-york",
+      "openingHoursSpecification": [
+        { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "09:00", "closes": "23:00" },
+        { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Saturday","Sunday"], "opens": "10:00", "closes": "22:00" }
+      ],
+      "amenityFeature": [
+        { "@type": "LocationFeatureSpecification", "name": "Recording studios" },
+        { "@type": "LocationFeatureSpecification", "name": "Rehearsal studios" },
+        { "@type": "LocationFeatureSpecification", "name": "Showcase and stage suites" },
+        { "@type": "LocationFeatureSpecification", "name": "Podcast recording" },
+        { "@type": "LocationFeatureSpecification", "name": "Film, TV and video production" },
+        { "@type": "LocationFeatureSpecification", "name": "Event space rental" }
+      ]
+    },
+    {
+      "@type": ["LocalBusiness", "MusicVenue"],
+      "@id": "https://smashstudios.com/#chicago",
+      "name": "Smash Studios — Chicago",
+      "description": "Rehearsal, recording and showcase studios serving Chicago's touring, theatre and podcast communities.",
+      "address": { "@type": "PostalAddress", "addressLocality": "Chicago", "addressRegion": "IL", "addressCountry": "US" },
+      "url": "https://smashstudios.com/chicago"
+    }
+  ]
+}
+</script>
+</helmet>
+
+<div style="background:#0C0B0A;color:#F3EDE3;min-height:100vh;position:relative;overflow-x:hidden">
+
+  <header style="position:sticky;top:0;z-index:50;display:flex;align-items:center;justify-content:space-between;gap:24px;padding:14px clamp(16px,4vw,48px);background:rgba(12,11,10,0.92);backdrop-filter:blur(10px);border-bottom:1px solid #26221D">
+    <a href="#top" style="display:flex;align-items:baseline;gap:10px;color:#F3EDE3">
+      <span style="font-family:'Archivo Black',sans-serif;font-size:22px;letter-spacing:-0.02em;text-transform:uppercase">Smash</span>
+      <span style="font-family:'Archivo Narrow',sans-serif;font-size:11px;letter-spacing:0.28em;text-transform:uppercase;color:#8E877D">Studios · Est. 1989</span>
+    </a>
+    <nav aria-label="Primary" style="display:flex;align-items:center;gap:clamp(12px,2vw,28px);flex-wrap:wrap;justify-content:flex-end">
+      <a href="#services" style="font-family:'Archivo Narrow',sans-serif;font-size:13px;letter-spacing:0.14em;text-transform:uppercase;color:#C9C2B7">Studios</a>
+      <a href="#locations" style="font-family:'Archivo Narrow',sans-serif;font-size:13px;letter-spacing:0.14em;text-transform:uppercase;color:#C9C2B7">Locations</a>
+      <a href="#gallery" style="font-family:'Archivo Narrow',sans-serif;font-size:13px;letter-spacing:0.14em;text-transform:uppercase;color:#C9C2B7">Gallery</a>
+      <a href="#clients" style="font-family:'Archivo Narrow',sans-serif;font-size:13px;letter-spacing:0.14em;text-transform:uppercase;color:#C9C2B7">Clients</a>
+      <a href="#book" style="padding:10px 18px;background:#FF3B20;color:#0C0B0A;font-family:'Archivo Narrow',sans-serif;font-weight:700;font-size:13px;letter-spacing:0.16em;text-transform:uppercase" style-hover="background:#F3EDE3;color:#0C0B0A">Book a room</a>
+    </nav>
+  </header>
+
+  <section id="top" aria-labelledby="hero-title" style="position:relative;min-height:min(88vh,860px);display:grid;grid-template-rows:1fr auto;isolation:isolate">
+    <div style="position:absolute;inset:0;z-index:0">
+      <img src="uploads/5-Stage-1.jpg" alt="The Smash Studios stage suite lit in purple and amber: hardwood floor, grand piano, Marshall stacks, a Smash Studios drum kit on a rug and vintage combo amps lining both walls" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 55%">
+    </div>
+    <div style="position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(180deg,rgba(12,11,10,0.86) 0%,rgba(12,11,10,0.58) 38%,rgba(12,11,10,0.94) 100%)"></div>
+    <div style="position:relative;z-index:2;display:flex;flex-direction:column;justify-content:flex-end;gap:28px;padding:clamp(48px,8vw,110px) clamp(16px,4vw,48px) clamp(28px,4vw,44px);max-width:1400px;margin:0 auto;width:100%">
+      <p style="display:flex;align-items:center;gap:12px;margin:0;font-family:'Archivo Narrow',sans-serif;font-size:13px;letter-spacing:0.3em;text-transform:uppercase;color:#FF3B20">
+        <span style="width:8px;height:8px;background:#FF3B20;border-radius:50%;animation:smash-blink 2.4s ease-in-out infinite"></span>
+        New York City · Chicago · Since 1989
+      </p>
+      <h1 id="hero-title" style="margin:0;font-family:'Archivo Black',sans-serif;font-size:clamp(42px,8.2vw,124px);line-height:0.88;letter-spacing:-0.035em;text-transform:uppercase;text-wrap:balance;max-width:16ch">Where the record gets made</h1>
+      <p style="margin:0;max-width:60ch;font-size:clamp(16px,1.5vw,21px);line-height:1.5;color:#D8D1C6;text-wrap:pretty">Thirty-five years of recording, rehearsal, showcase and production rooms in Midtown Manhattan — and now Chicago. Neve and API front ends, four live rooms, a 65&#215;26&#160;ft soundstage, and a crew that has run sessions for Lou Reed, Kanye West and thousands of working bands in between.</p>
+      <div style="display:flex;flex-wrap:wrap;gap:12px;align-items:center">
+        <a href="#book" style="padding:16px 28px;background:#FF3B20;color:#0C0B0A;font-family:'Archivo Narrow',sans-serif;font-weight:700;font-size:15px;letter-spacing:0.16em;text-transform:uppercase" style-hover="background:#F3EDE3">Check availability</a>
+        <a href="#gallery" style="padding:16px 28px;border:1px solid #4A443C;color:#F3EDE3;font-family:'Archivo Narrow',sans-serif;font-weight:700;font-size:15px;letter-spacing:0.16em;text-transform:uppercase" style-hover="border-color:#F3EDE3;background:rgba(243,237,227,0.06)">Watch the studio tour</a>
+        <span style="font-family:'Archivo Narrow',sans-serif;font-size:13px;letter-spacing:0.1em;text-transform:uppercase;color:#8E877D">Same-day rehearsal holds · 7 days a week</span>
+      </div>
+    </div>
+    <dl style="position:relative;z-index:2;display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1px;margin:0;background:#26221D;border-top:1px solid #26221D">
+      <div style="background:#0C0B0A;padding:20px clamp(16px,3vw,32px)">
+        <dt style="font-family:'Archivo Narrow',sans-serif;font-size:11px;letter-spacing:0.22em;text-transform:uppercase;color:#8E877D">Founded</dt>
+        <dd style="margin:6px 0 0;font-family:'Archivo Black',sans-serif;font-size:clamp(24px,2.6vw,34px);letter-spacing:-0.02em">1989</dd>
+      </div>
+      <div style="background:#0C0B0A;padding:20px clamp(16px,3vw,32px)">
+        <dt style="font-family:'Archivo Narrow',sans-serif;font-size:11px;letter-spacing:0.22em;text-transform:uppercase;color:#8E877D">Rooms</dt>
+        <dd style="margin:6px 0 0;font-family:'Archivo Black',sans-serif;font-size:clamp(24px,2.6vw,34px);letter-spacing:-0.02em">24</dd>
+      </div>
+      <div style="background:#0C0B0A;padding:20px clamp(16px,3vw,32px)">
+        <dt style="font-family:'Archivo Narrow',sans-serif;font-size:11px;letter-spacing:0.22em;text-transform:uppercase;color:#8E877D">Soundstage</dt>
+        <dd style="margin:6px 0 0;font-family:'Archivo Black',sans-serif;font-size:clamp(24px,2.6vw,34px);letter-spacing:-0.02em">65&#215;26 ft</dd>
+      </div>
+      <div style="background:#0C0B0A;padding:20px clamp(16px,3vw,32px)">
+        <dt style="font-family:'Archivo Narrow',sans-serif;font-size:11px;letter-spacing:0.22em;text-transform:uppercase;color:#8E877D">Seated audience</dt>
+        <dd style="margin:6px 0 0;font-family:'Archivo Black',sans-serif;font-size:clamp(24px,2.6vw,34px);letter-spacing:-0.02em">Up to 75</dd>
+      </div>
+      <div style="background:#0C0B0A;padding:20px clamp(16px,3vw,32px)">
+        <dt style="font-family:'Archivo Narrow',sans-serif;font-size:11px;letter-spacing:0.22em;text-transform:uppercase;color:#8E877D">Press</dt>
+        <dd style="margin:6px 0 0;font-family:'Archivo Narrow',sans-serif;font-weight:600;font-size:15px;line-height:1.3;color:#D8D1C6">&#8220;Best Studio in New York&#8221;<br><span style="color:#8E877D">Village Voice</span></dd>
+      </div>
+    </dl>
+  </section>
+
+  <sc-if value="{{ showMarquee }}" hint-placeholder-val="{{ true }}"><section aria-label="Notable clients" style="border-bottom:1px solid #26221D;padding:22px 0;overflow:hidden;background:#100E0C">
+    <h2 style="margin:0 clamp(16px,4vw,48px) 16px;font-family:'Archivo Narrow',sans-serif;font-size:11px;letter-spacing:0.28em;text-transform:uppercase;color:#8E877D">Sessions, rehearsals and showcases for</h2>
+    <div style="display:flex;width:max-content;animation:smash-marquee 46s linear infinite">
+      <ul style="display:flex;align-items:center;gap:44px;margin:0;padding:0 22px;list-style:none">
+        <li style="font-family:'Archivo Black',sans-serif;font-size:clamp(20px,2.4vw,32px);text-transform:uppercase;letter-spacing:-0.02em;color:#3A342D">Lou Reed</li>
+        <li style="font-family:'Archivo Black',sans-serif;font-size:clamp(20px,2.4vw,32px);text-transform:uppercase;letter-spacing:-0.02em;color:#6E665B">Kanye West</li>
+        <li style="font-family:'Archivo Black',sans-serif;font-size:clamp(20px,2.4vw,32px);text-transform:uppercase;letter-spacing:-0.02em;color:#3A342D">MTV Making the Band</li>
+        <li style="font-family:'Archivo Black',sans-serif;font-size:clamp(20px,2.4vw,32px);text-transform:uppercase;letter-spacing:-0.02em;color:#6E665B">Sony Music</li>
+        <li style="font-family:'Archivo Black',sans-serif;font-size:clamp(20px,2.4vw,32px);text-transform:uppercase;letter-spacing:-0.02em;color:#3A342D">Atlantic Records</li>
+        <li style="font-family:'Archivo Black',sans-serif;font-size:clamp(20px,2.4vw,32px);text-transform:uppercase;letter-spacing:-0.02em;color:#6E665B">Broadway companies</li>
+      </ul>
+      <ul aria-hidden="true" style="display:flex;align-items:center;gap:44px;margin:0;padding:0 22px;list-style:none">
+        <li style="font-family:'Archivo Black',sans-serif;font-size:clamp(20px,2.4vw,32px);text-transform:uppercase;letter-spacing:-0.02em;color:#3A342D">Lou Reed</li>
+        <li style="font-family:'Archivo Black',sans-serif;font-size:clamp(20px,2.4vw,32px);text-transform:uppercase;letter-spacing:-0.02em;color:#6E665B">Kanye West</li>
+        <li style="font-family:'Archivo Black',sans-serif;font-size:clamp(20px,2.4vw,32px);text-transform:uppercase;letter-spacing:-0.02em;color:#3A342D">MTV Making the Band</li>
+        <li style="font-family:'Archivo Black',sans-serif;font-size:clamp(20px,2.4vw,32px);text-transform:uppercase;letter-spacing:-0.02em;color:#6E665B">Sony Music</li>
+        <li style="font-family:'Archivo Black',sans-serif;font-size:clamp(20px,2.4vw,32px);text-transform:uppercase;letter-spacing:-0.02em;color:#3A342D">Atlantic Records</li>
+        <li style="font-family:'Archivo Black',sans-serif;font-size:clamp(20px,2.4vw,32px);text-transform:uppercase;letter-spacing:-0.02em;color:#6E665B">Broadway companies</li>
+      </ul>
+    </div>
+  </section></sc-if>
+
+  <section id="services" aria-labelledby="services-title" style="max-width:1400px;margin:0 auto;padding:clamp(56px,8vw,110px) clamp(16px,4vw,48px)">
+    <div style="display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:24px;margin-bottom:clamp(28px,4vw,48px)">
+      <div style="max-width:40ch">
+        <p style="margin:0 0 12px;font-family:'Archivo Narrow',sans-serif;font-size:12px;letter-spacing:0.28em;text-transform:uppercase;color:#FF3B20">What we run</p>
+        <h2 id="services-title" style="margin:0;font-family:'Archivo Black',sans-serif;font-size:clamp(30px,4.4vw,58px);line-height:0.95;letter-spacing:-0.03em;text-transform:uppercase">Eight kinds of room, one building</h2>
+      </div>
+      <p style="margin:0;max-width:44ch;font-size:16px;line-height:1.55;color:#A79F94;text-wrap:pretty">Every room books on its own page with its own rates, gear list and hold form. Tell us the date and we hold it while you sort the deposit.</p>
+    </div>
+    <ul style="display:grid;grid-template-columns:repeat(auto-fit,minmax(288px,1fr));gap:1px;margin:0;padding:0;list-style:none;background:#26221D;border:1px solid #26221D">
+      <li style="background:#121110;padding:clamp(22px,2.6vw,32px);display:flex;flex-direction:column;gap:12px" style-hover="background:#171512">
+        <span style="font-family:'Archivo Narrow',sans-serif;font-size:11px;letter-spacing:0.24em;text-transform:uppercase;color:#6E665B">01</span>
+        <h3 style="margin:0;font-family:'Archivo Black',sans-serif;font-size:22px;text-transform:uppercase;letter-spacing:-0.02em">Recording studios</h3>
+        <p style="margin:0;font-size:15px;line-height:1.55;color:#A79F94">Neve and API signal chain, four live rooms, iso booths, and a vintage outboard collection that stays in the building. Engineer optional.</p>
+        <a href="#book" style="margin-top:auto;font-family:'Archivo Narrow',sans-serif;font-weight:700;font-size:13px;letter-spacing:0.16em;text-transform:uppercase">Book a session &#8594;</a>
+      </li>
+      <li style="background:#121110;padding:clamp(22px,2.6vw,32px);display:flex;flex-direction:column;gap:12px" style-hover="background:#171512">
+        <span style="font-family:'Archivo Narrow',sans-serif;font-size:11px;letter-spacing:0.24em;text-transform:uppercase;color:#6E665B">02</span>
+        <h3 style="margin:0;font-family:'Archivo Black',sans-serif;font-size:22px;text-transform:uppercase;letter-spacing:-0.02em">Rehearsal studios</h3>
+        <p style="margin:0;font-size:15px;line-height:1.55;color:#A79F94">Elite rooms with full backline and monitors; Standard rooms for hourly writing and woodshedding. Hourly, block and tour-prep rates.</p>
+        <a href="#book" style="margin-top:auto;font-family:'Archivo Narrow',sans-serif;font-weight:700;font-size:13px;letter-spacing:0.16em;text-transform:uppercase">Hold a room &#8594;</a>
+      </li>
+      <li style="background:#121110;padding:clamp(22px,2.6vw,32px);display:flex;flex-direction:column;gap:12px" style-hover="background:#171512">
+        <span style="font-family:'Archivo Narrow',sans-serif;font-size:11px;letter-spacing:0.24em;text-transform:uppercase;color:#6E665B">03</span>
+        <h3 style="margin:0;font-family:'Archivo Black',sans-serif;font-size:22px;text-transform:uppercase;letter-spacing:-0.02em">Showcase &amp; stage suites</h3>
+        <p style="margin:0;font-size:15px;line-height:1.55;color:#A79F94">A 65&#215;26&#160;ft soundstage for large-format bands, theatre blocking and label showcases, with stage lighting, PA and seating for 75.</p>
+        <a href="#book" style="margin-top:auto;font-family:'Archivo Narrow',sans-serif;font-weight:700;font-size:13px;letter-spacing:0.16em;text-transform:uppercase">Plan a showcase &#8594;</a>
+      </li>
+      <li style="background:#121110;padding:clamp(22px,2.6vw,32px);display:flex;flex-direction:column;gap:12px" style-hover="background:#171512">
+        <span style="font-family:'Archivo Narrow',sans-serif;font-size:11px;letter-spacing:0.24em;text-transform:uppercase;color:#6E665B">04</span>
+        <h3 style="margin:0;font-family:'Archivo Black',sans-serif;font-size:22px;text-transform:uppercase;letter-spacing:-0.02em">Podcast recording</h3>
+        <p style="margin:0;font-size:15px;line-height:1.55;color:#A79F94">Treated rooms, Shure and Neumann mic sets, multitrack capture and same-day audio files. Two, three or four chairs on camera.</p>
+        <a href="#book" style="margin-top:auto;font-family:'Archivo Narrow',sans-serif;font-weight:700;font-size:13px;letter-spacing:0.16em;text-transform:uppercase">Book a taping &#8594;</a>
+      </li>
+      <li style="background:#121110;padding:clamp(22px,2.6vw,32px);display:flex;flex-direction:column;gap:12px" style-hover="background:#171512">
+        <span style="font-family:'Archivo Narrow',sans-serif;font-size:11px;letter-spacing:0.24em;text-transform:uppercase;color:#6E665B">05</span>
+        <h3 style="margin:0;font-family:'Archivo Black',sans-serif;font-size:22px;text-transform:uppercase;letter-spacing:-0.02em">Film, TV &amp; video</h3>
+        <p style="margin:0;font-size:15px;line-height:1.55;color:#A79F94">Production, editing and multi-camera live streaming out of the soundstage — from single-song sessions to broadcast segments.</p>
+        <a href="#book" style="margin-top:auto;font-family:'Archivo Narrow',sans-serif;font-weight:700;font-size:13px;letter-spacing:0.16em;text-transform:uppercase">Scope a shoot &#8594;</a>
+      </li>
+      <li style="background:#121110;padding:clamp(22px,2.6vw,32px);display:flex;flex-direction:column;gap:12px" style-hover="background:#171512">
+        <span style="font-family:'Archivo Narrow',sans-serif;font-size:11px;letter-spacing:0.24em;text-transform:uppercase;color:#6E665B">06</span>
+        <h3 style="margin:0;font-family:'Archivo Black',sans-serif;font-size:22px;text-transform:uppercase;letter-spacing:-0.02em">Education</h3>
+        <p style="margin:0;font-size:15px;line-height:1.55;color:#A79F94">Adult and youth band programs and private lessons, taught in the same rooms the pros book. Semesters run fall, spring and summer.</p>
+        <a href="#book" style="margin-top:auto;font-family:'Archivo Narrow',sans-serif;font-weight:700;font-size:13px;letter-spacing:0.16em;text-transform:uppercase">See programs &#8594;</a>
+      </li>
+      <li style="background:#121110;padding:clamp(22px,2.6vw,32px);display:flex;flex-direction:column;gap:12px" style-hover="background:#171512">
+        <span style="font-family:'Archivo Narrow',sans-serif;font-size:11px;letter-spacing:0.24em;text-transform:uppercase;color:#6E665B">07</span>
+        <h3 style="margin:0;font-family:'Archivo Black',sans-serif;font-size:22px;text-transform:uppercase;letter-spacing:-0.02em">Event space</h3>
+        <p style="margin:0;font-size:15px;line-height:1.55;color:#A79F94">Listening parties, press days, castings and company meetings in a room with real acoustics, a freight elevator and Midtown access.</p>
+        <a href="#book" style="margin-top:auto;font-family:'Archivo Narrow',sans-serif;font-weight:700;font-size:13px;letter-spacing:0.16em;text-transform:uppercase">Request a date &#8594;</a>
+      </li>
+      <li style="background:#121110;padding:clamp(22px,2.6vw,32px);display:flex;flex-direction:column;gap:12px" style-hover="background:#171512">
+        <span style="font-family:'Archivo Narrow',sans-serif;font-size:11px;letter-spacing:0.24em;text-transform:uppercase;color:#6E665B">08</span>
+        <h3 style="margin:0;font-family:'Archivo Black',sans-serif;font-size:22px;text-transform:uppercase;letter-spacing:-0.02em">Equipment rental</h3>
+        <p style="margin:0;font-size:15px;line-height:1.55;color:#A79F94">Amps, drums, keys, mics, PA and outboard, rented in-house or out. Add gear to any booking at the time you reserve the room.</p>
+        <a href="#book" style="margin-top:auto;font-family:'Archivo Narrow',sans-serif;font-weight:700;font-size:13px;letter-spacing:0.16em;text-transform:uppercase">Browse the list &#8594;</a>
+      </li>
+    </ul>
+  </section>
+
+  <section aria-labelledby="stage-title" style="border-top:1px solid #26221D;border-bottom:1px solid #26221D;background:#100E0C">
+    <div style="max-width:1400px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,380px),1fr))">
+      <div style="padding:clamp(40px,6vw,88px) clamp(16px,4vw,48px);display:flex;flex-direction:column;gap:22px;justify-content:center">
+        <p style="margin:0;font-family:'Archivo Narrow',sans-serif;font-size:12px;letter-spacing:0.28em;text-transform:uppercase;color:#FF3B20">The Stage Suite</p>
+        <h2 id="stage-title" style="margin:0;font-family:'Archivo Black',sans-serif;font-size:clamp(30px,4.4vw,56px);line-height:0.94;letter-spacing:-0.03em;text-transform:uppercase">1,690 square feet with a PA and a load-in</h2>
+        <p style="margin:0;max-width:50ch;font-size:17px;line-height:1.55;color:#C1B9AD;text-wrap:pretty">Large-format bands rehearse their full production here. Theatre companies block scenes at true stage width. Labels sit 75 people down for a showcase, and the video team streams it the same night.</p>
+        <ul style="margin:0;padding:0;list-style:none;display:grid;gap:10px;max-width:48ch">
+          <li style="display:flex;gap:12px;font-size:15px;color:#A79F94;border-top:1px solid #26221D;padding-top:10px"><strong style="color:#F3EDE3;font-family:'Archivo Narrow',sans-serif;letter-spacing:0.08em;text-transform:uppercase;min-width:11ch">Dimensions</strong> 65 &#215; 26 ft, 16 ft ceilings</li>
+          <li style="display:flex;gap:12px;font-size:15px;color:#A79F94;border-top:1px solid #26221D;padding-top:10px"><strong style="color:#F3EDE3;font-family:'Archivo Narrow',sans-serif;letter-spacing:0.08em;text-transform:uppercase;min-width:11ch">Capacity</strong> 75 seated, 120 standing</li>
+          <li style="display:flex;gap:12px;font-size:15px;color:#A79F94;border-top:1px solid #26221D;padding-top:10px"><strong style="color:#F3EDE3;font-family:'Archivo Narrow',sans-serif;letter-spacing:0.08em;text-transform:uppercase;min-width:11ch">Included</strong> Stage lighting, PA, monitors, backline</li>
+          <li style="display:flex;gap:12px;font-size:15px;color:#A79F94;border-top:1px solid #26221D;padding-top:10px"><strong style="color:#F3EDE3;font-family:'Archivo Narrow',sans-serif;letter-spacing:0.08em;text-transform:uppercase;min-width:11ch">Add-ons</strong> Multi-cam capture, live stream, house engineer</li>
+        </ul>
+        <div style="display:flex;flex-wrap:wrap;gap:12px;margin-top:4px">
+          <a href="#book" style="padding:15px 26px;background:#FF3B20;color:#0C0B0A;font-family:'Archivo Narrow',sans-serif;font-weight:700;font-size:14px;letter-spacing:0.16em;text-transform:uppercase" style-hover="background:#F3EDE3">Hold the stage</a>
+          <a href="#gallery" style="padding:15px 26px;border:1px solid #4A443C;color:#F3EDE3;font-family:'Archivo Narrow',sans-serif;font-weight:700;font-size:14px;letter-spacing:0.16em;text-transform:uppercase" style-hover="border-color:#F3EDE3">See it in use</a>
+        </div>
+      </div>
+      <div style="position:relative;min-height:clamp(320px,42vw,620px)">
+        <img src="uploads/st-1.jpg" alt="The 65 by 26 foot soundstage seen from behind the front-of-house digital console, stage lighting on the grand piano, drum kit and backline at the far end" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center">
+      </div>
+    </div>
+  </section>
+
+  <section id="locations" aria-labelledby="locations-title" style="max-width:1400px;margin:0 auto;padding:clamp(56px,8vw,110px) clamp(16px,4vw,48px)">
+    <p style="margin:0 0 12px;font-family:'Archivo Narrow',sans-serif;font-size:12px;letter-spacing:0.28em;text-transform:uppercase;color:#FF3B20">Two buildings</p>
+    <h2 id="locations-title" style="margin:0 0 clamp(28px,4vw,48px);font-family:'Archivo Black',sans-serif;font-size:clamp(30px,4.4vw,58px);line-height:0.95;letter-spacing:-0.03em;text-transform:uppercase;max-width:26ch">Pick your city, get that city&#8217;s rooms</h2>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));gap:clamp(16px,2vw,28px)">
+      <article style="border:1px solid #26221D;background:#121110;display:flex;flex-direction:column">
+        <div style="position:relative;height:clamp(200px,22vw,280px)">
+          <img src="uploads/NYC.jpg" alt="Midtown Manhattan skyline at dusk, looking south past the Empire State Building toward Lower Manhattan — the neighborhood around the 37th Street studio" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 40%;filter:saturate(0.85) contrast(1.05) brightness(0.8)">
+        </div>
+        <div style="padding:clamp(22px,2.6vw,34px);display:flex;flex-direction:column;gap:14px;flex:1">
+          <h3 style="margin:0;font-family:'Archivo Black',sans-serif;font-size:clamp(24px,2.6vw,34px);text-transform:uppercase;letter-spacing:-0.025em">New York City</h3>
+          <p style="margin:0;font-size:16px;line-height:1.55;color:#A79F94;text-wrap:pretty">The original. Sixteen rehearsal rooms, three recording studios, the stage suite and the podcast floor — one block from Penn Station, freight elevator to the door.</p>
+          <dl style="margin:0;display:grid;gap:8px;font-size:15px">
+            <div style="display:flex;gap:12px;border-top:1px solid #26221D;padding-top:8px"><dt style="min-width:9ch;font-family:'Archivo Narrow',sans-serif;letter-spacing:0.08em;text-transform:uppercase;color:#8E877D">Address</dt><dd style="margin:0;color:#D8D1C6">320 W 37th St, 11th Fl, New York, NY 10018</dd></div>
+            <div style="display:flex;gap:12px;border-top:1px solid #26221D;padding-top:8px"><dt style="min-width:9ch;font-family:'Archivo Narrow',sans-serif;letter-spacing:0.08em;text-transform:uppercase;color:#8E877D">Hours</dt><dd style="margin:0;color:#D8D1C6">Mon&#8211;Fri 9a&#8211;11p · Sat&#8211;Sun 10a&#8211;10p</dd></div>
+            <div style="display:flex;gap:12px;border-top:1px solid #26221D;padding-top:8px"><dt style="min-width:9ch;font-family:'Archivo Narrow',sans-serif;letter-spacing:0.08em;text-transform:uppercase;color:#8E877D">Phone</dt><dd style="margin:0;color:#D8D1C6">(212) 561-7777</dd></div>
+          </dl>
+          <a href="#book" style="margin-top:auto;font-family:'Archivo Narrow',sans-serif;font-weight:700;font-size:14px;letter-spacing:0.16em;text-transform:uppercase">Explore New York &#8594;</a>
+        </div>
+      </article>
+      <article style="border:1px solid #26221D;background:#121110;display:flex;flex-direction:column">
+        <div style="position:relative;height:clamp(200px,22vw,280px)">
+          <img src="uploads/chi-2.jpg" alt="Chicago skyline at blue hour, the Hancock tower rising over Lincoln Park treetops and lit streetlamps" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 35%;filter:saturate(0.85) contrast(1.05) brightness(0.82)">
+        </div>
+        <div style="padding:clamp(22px,2.6vw,34px);display:flex;flex-direction:column;gap:14px;flex:1">
+          <h3 style="margin:0;font-family:'Archivo Black',sans-serif;font-size:clamp(24px,2.6vw,34px);text-transform:uppercase;letter-spacing:-0.025em">Chicago</h3>
+          <p style="margin:0;font-size:16px;line-height:1.55;color:#A79F94;text-wrap:pretty">Same rooms, same rules, Midwest tour routing. Rehearsal and recording studios plus a showcase room, built for bands staging out of Chicago.</p>
+          <dl style="margin:0;display:grid;gap:8px;font-size:15px">
+            <div style="display:flex;gap:12px;border-top:1px solid #26221D;padding-top:8px"><dt style="min-width:9ch;font-family:'Archivo Narrow',sans-serif;letter-spacing:0.08em;text-transform:uppercase;color:#8E877D">Address</dt><dd style="margin:0;color:#D8D1C6">Address to confirm — Chicago, IL</dd></div>
+            <div style="display:flex;gap:12px;border-top:1px solid #26221D;padding-top:8px"><dt style="min-width:9ch;font-family:'Archivo Narrow',sans-serif;letter-spacing:0.08em;text-transform:uppercase;color:#8E877D">Hours</dt><dd style="margin:0;color:#D8D1C6">Mon&#8211;Sun, hours to confirm</dd></div>
+            <div style="display:flex;gap:12px;border-top:1px solid #26221D;padding-top:8px"><dt style="min-width:9ch;font-family:'Archivo Narrow',sans-serif;letter-spacing:0.08em;text-transform:uppercase;color:#8E877D">Phone</dt><dd style="margin:0;color:#D8D1C6">Phone to confirm</dd></div>
+          </dl>
+          <a href="#book" style="margin-top:auto;font-family:'Archivo Narrow',sans-serif;font-weight:700;font-size:14px;letter-spacing:0.16em;text-transform:uppercase">Explore Chicago &#8594;</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section id="gallery" aria-labelledby="gallery-title" style="border-top:1px solid #26221D;background:#100E0C">
+    <div style="max-width:1400px;margin:0 auto;padding:clamp(56px,8vw,100px) clamp(16px,4vw,48px)">
+      <div style="display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:20px;margin-bottom:clamp(24px,3vw,40px)">
+        <div>
+          <p style="margin:0 0 12px;font-family:'Archivo Narrow',sans-serif;font-size:12px;letter-spacing:0.28em;text-transform:uppercase;color:#FF3B20">Gallery &amp; reel</p>
+          <h2 id="gallery-title" style="margin:0;font-family:'Archivo Black',sans-serif;font-size:clamp(30px,4.4vw,58px);line-height:0.95;letter-spacing:-0.03em;text-transform:uppercase">Rooms, gear, nights</h2>
+        </div>
+        <a href="#book" style="font-family:'Archivo Narrow',sans-serif;font-weight:700;font-size:14px;letter-spacing:0.16em;text-transform:uppercase">Full gallery &amp; video reel &#8594;</a>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:1px;background:#26221D;border:1px solid #26221D">
+        <figure style="margin:0;position:relative;aspect-ratio:4/5;background:#121110">
+          <img src="uploads/1-SC3-Full-Studio-v1-2.jpg" alt="A Smash Studios rehearsal room: maple floor, Marshall and Hartke stacks, Sonor drum kit, stacked keyboards, vintage combo amps, mic stands and floor wedges under theatrical lighting" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:60% center">
+          <figcaption style="position:absolute;left:0;right:0;bottom:0;padding:12px 14px;background:linear-gradient(0deg,rgba(12,11,10,0.9),transparent);font-family:'Archivo Narrow',sans-serif;font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:#D8D1C6;pointer-events:none">Rehearsal Studio 3, full backline</figcaption>
+        </figure>
+        <figure style="margin:0;position:relative;aspect-ratio:4/5;background:#121110">
+          <image-slot id="gal-2" shape="rect" fit="cover" placeholder="Photo — drum kit in live room, mics up"></image-slot>
+          <figcaption style="position:absolute;left:0;right:0;bottom:0;padding:12px 14px;background:linear-gradient(0deg,rgba(12,11,10,0.9),transparent);font-family:'Archivo Narrow',sans-serif;font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:#D8D1C6;pointer-events:none">Live Room 2, tracking drums</figcaption>
+        </figure>
+        <figure style="margin:0;position:relative;aspect-ratio:4/5;background:#121110">
+          <image-slot id="gal-3" shape="rect" fit="cover" placeholder="Photo — vintage outboard rack, LEDs lit"></image-slot>
+          <figcaption style="position:absolute;left:0;right:0;bottom:0;padding:12px 14px;background:linear-gradient(0deg,rgba(12,11,10,0.9),transparent);font-family:'Archivo Narrow',sans-serif;font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:#D8D1C6;pointer-events:none">Outboard, 1176s and Pultecs</figcaption>
+        </figure>
+        <figure style="margin:0;position:relative;aspect-ratio:4/5;background:#121110">
+          <image-slot id="gal-4" shape="rect" fit="cover" placeholder="Video still — showcase night on the soundstage, audience visible"></image-slot>
+          <figcaption style="position:absolute;left:0;right:0;bottom:0;padding:12px 14px;background:linear-gradient(0deg,rgba(12,11,10,0.9),transparent);font-family:'Archivo Narrow',sans-serif;font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:#D8D1C6;pointer-events:none">Showcase night, Stage Suite</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section id="clients" aria-labelledby="clients-title" style="max-width:1400px;margin:0 auto;padding:clamp(56px,8vw,110px) clamp(16px,4vw,48px)">
+    <p style="margin:0 0 12px;font-family:'Archivo Narrow',sans-serif;font-size:12px;letter-spacing:0.28em;text-transform:uppercase;color:#FF3B20">What people say</p>
+    <h2 id="clients-title" style="margin:0 0 clamp(28px,4vw,48px);font-family:'Archivo Black',sans-serif;font-size:clamp(30px,4.4vw,58px);line-height:0.95;letter-spacing:-0.03em;text-transform:uppercase;max-width:24ch">Thirty-five years of repeat bookings</h2>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:clamp(16px,2vw,24px)">
+      <figure style="margin:0;border-top:2px solid #FF3B20;background:#121110;padding:clamp(22px,2.4vw,30px);display:flex;flex-direction:column;gap:16px">
+        <blockquote style="margin:0;font-family:'Archivo',sans-serif;font-weight:500;font-size:clamp(17px,1.6vw,20px);line-height:1.45;color:#F3EDE3;text-wrap:pretty">Placeholder quote — a touring band's tour-prep story, in their own words. Replace with a real testimonial.</blockquote>
+        <figcaption style="font-family:'Archivo Narrow',sans-serif;font-size:13px;letter-spacing:0.14em;text-transform:uppercase;color:#8E877D">Artist name<br><span style="color:#6E665B">Tour rehearsals, Stage Suite</span></figcaption>
+      </figure>
+      <figure style="margin:0;border-top:2px solid #FF3B20;background:#121110;padding:clamp(22px,2.4vw,30px);display:flex;flex-direction:column;gap:16px">
+        <blockquote style="margin:0;font-family:'Archivo',sans-serif;font-weight:500;font-size:clamp(17px,1.6vw,20px);line-height:1.45;color:#F3EDE3;text-wrap:pretty">Placeholder quote — a label or A&amp;R perspective on running showcases here. Replace with a real testimonial.</blockquote>
+        <figcaption style="font-family:'Archivo Narrow',sans-serif;font-size:13px;letter-spacing:0.14em;text-transform:uppercase;color:#8E877D">Name, title<br><span style="color:#6E665B">Label showcase</span></figcaption>
+      </figure>
+      <figure style="margin:0;border-top:2px solid #FF3B20;background:#121110;padding:clamp(22px,2.4vw,30px);display:flex;flex-direction:column;gap:16px">
+        <blockquote style="margin:0;font-family:'Archivo',sans-serif;font-weight:500;font-size:clamp(17px,1.6vw,20px);line-height:1.45;color:#F3EDE3;text-wrap:pretty">Placeholder quote — a podcast or film producer on turnaround and crew. Replace with a real testimonial.</blockquote>
+        <figcaption style="font-family:'Archivo Narrow',sans-serif;font-size:13px;letter-spacing:0.14em;text-transform:uppercase;color:#8E877D">Name, show<br><span style="color:#6E665B">Podcast floor</span></figcaption>
+      </figure>
+    </div>
+    <div style="margin-top:clamp(28px,4vw,44px);border-top:1px solid #26221D;padding-top:24px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:20px">
+      <p style="margin:0;font-family:'Archivo Narrow',sans-serif;font-size:13px;letter-spacing:0.12em;text-transform:uppercase;color:#8E877D">As seen in / on</p>
+      <p style="margin:0;font-family:'Archivo Narrow',sans-serif;font-weight:600;font-size:16px;color:#D8D1C6">Village Voice — &#8220;Best Studio in New York&#8221;</p>
+      <p style="margin:0;font-family:'Archivo Narrow',sans-serif;font-weight:600;font-size:16px;color:#D8D1C6">MTV — <em>Making the Band</em></p>
+      <p style="margin:0;font-family:'Archivo Narrow',sans-serif;font-weight:600;font-size:16px;color:#D8D1C6">Additional press to add</p>
+    </div>
+  </section>
+
+  <section id="book" aria-labelledby="book-title" style="border-top:1px solid #26221D;background:#141210">
+    <div style="max-width:1400px;margin:0 auto;padding:clamp(56px,8vw,110px) clamp(16px,4vw,48px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:clamp(28px,4vw,64px)">
+      <div style="display:flex;flex-direction:column;gap:18px">
+        <p style="margin:0;font-family:'Archivo Narrow',sans-serif;font-size:12px;letter-spacing:0.28em;text-transform:uppercase;color:#FF3B20">Booking</p>
+        <h2 id="book-title" style="margin:0;font-family:'Archivo Black',sans-serif;font-size:clamp(30px,4.4vw,58px);line-height:0.95;letter-spacing:-0.03em;text-transform:uppercase">Four fields and a date</h2>
+        <p style="margin:0;max-width:44ch;font-size:17px;line-height:1.55;color:#C1B9AD;text-wrap:pretty">Send the request and a studio manager replies with the hold, the rate and the load-in details. Calls answered during business hours; rehearsal holds often same-day.</p>
+        <dl style="margin:0;display:grid;gap:10px;font-size:16px">
+          <div style="display:flex;gap:12px;border-top:1px solid #26221D;padding-top:10px"><dt style="min-width:8ch;font-family:'Archivo Narrow',sans-serif;letter-spacing:0.1em;text-transform:uppercase;color:#8E877D">Call</dt><dd style="margin:0;color:#F3EDE3">(212) 561-7777</dd></div>
+          <div style="display:flex;gap:12px;border-top:1px solid #26221D;padding-top:10px"><dt style="min-width:8ch;font-family:'Archivo Narrow',sans-serif;letter-spacing:0.1em;text-transform:uppercase;color:#8E877D">Email</dt><dd style="margin:0;color:#F3EDE3">booking@smashstudios.com</dd></div>
+          <div style="display:flex;gap:12px;border-top:1px solid #26221D;padding-top:10px"><dt style="min-width:8ch;font-family:'Archivo Narrow',sans-serif;letter-spacing:0.1em;text-transform:uppercase;color:#8E877D">Walk-in</dt><dd style="margin:0;color:#F3EDE3">320 W 37th St, 11th Floor, NYC</dd></div>
+        </dl>
+      </div>
+      <div style="display:grid;gap:14px;align-content:start">
+      <div style="display:flex;gap:16px;align-items:center;border:1px solid #26221D;background:#121110;padding:14px">
+        <img src="uploads/clay-smash.jpg" alt="A Smash Studios manager photographed on the studio floor" style="width:76px;height:76px;flex:none;object-fit:cover;object-position:50% 22%;filter:grayscale(1) contrast(1.05)">
+        <p style="margin:0;font-size:15px;line-height:1.5;color:#C1B9AD">Requests go to a studio manager on the floor, not a ticket queue. You get a person, a rate and a hold.</p>
+      </div>
+      <form style="display:grid;gap:14px;align-content:start" onSubmit="{{ onSubmit }}">
+        <label style="display:grid;gap:6px">
+          <span style="font-family:'Archivo Narrow',sans-serif;font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:#8E877D">Name</span>
+          <input type="text" name="name" placeholder="Your name" style="background:#0C0B0A;border:1px solid #332E28;color:#F3EDE3;font-family:'Archivo',sans-serif;font-size:16px;padding:14px 16px;outline:none" style-focus="border-color:#FF3B20">
+        </label>
+        <label style="display:grid;gap:6px">
+          <span style="font-family:'Archivo Narrow',sans-serif;font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:#8E877D">Email or phone</span>
+          <input type="text" name="contact" placeholder="How we reach you" style="background:#0C0B0A;border:1px solid #332E28;color:#F3EDE3;font-family:'Archivo',sans-serif;font-size:16px;padding:14px 16px;outline:none" style-focus="border-color:#FF3B20">
+        </label>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:14px">
+          <label style="display:grid;gap:6px;min-width:0">
+            <span style="font-family:'Archivo Narrow',sans-serif;font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:#8E877D">Room</span>
+            <select name="room" style="width:100%;min-width:0;background:#0C0B0A;border:1px solid #332E28;color:#F3EDE3;font-family:'Archivo',sans-serif;font-size:16px;padding:14px 16px;outline:none" style-focus="border-color:#FF3B20">
+              <option>Recording studio</option>
+              <option>Rehearsal — Elite</option>
+              <option>Rehearsal — Standard</option>
+              <option>Stage Suite / showcase</option>
+              <option>Podcast</option>
+              <option>Film / TV / stream</option>
+              <option>Event space</option>
+              <option>Education</option>
+            </select>
+          </label>
+          <label style="display:grid;gap:6px;min-width:0">
+            <span style="font-family:'Archivo Narrow',sans-serif;font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:#8E877D">Date</span>
+            <input type="date" name="date" style="width:100%;min-width:0;background:#0C0B0A;border:1px solid #332E28;color:#F3EDE3;font-family:'Archivo',sans-serif;font-size:16px;padding:13px 16px;outline:none" style-focus="border-color:#FF3B20">
+          </label>
+          <label style="display:grid;gap:6px;min-width:0">
+            <span style="font-family:'Archivo Narrow',sans-serif;font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:#8E877D">City</span>
+            <select name="city" style="width:100%;min-width:0;background:#0C0B0A;border:1px solid #332E28;color:#F3EDE3;font-family:'Archivo',sans-serif;font-size:16px;padding:14px 16px;outline:none" style-focus="border-color:#FF3B20">
+              <option>New York City</option>
+              <option>Chicago</option>
+            </select>
+          </label>
+        </div>
+        <label style="display:grid;gap:6px">
+          <span style="font-family:'Archivo Narrow',sans-serif;font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:#8E877D">Anything we should know</span>
+          <textarea name="notes" rows="3" placeholder="Band size, gear needs, load-in time" style="background:#0C0B0A;border:1px solid #332E28;color:#F3EDE3;font-family:'Archivo',sans-serif;font-size:16px;padding:14px 16px;outline:none;resize:vertical" style-focus="border-color:#FF3B20"></textarea>
+        </label>
+        <button type="submit" style="margin-top:4px;padding:17px 24px;background:#FF3B20;border:none;color:#0C0B0A;font-family:'Archivo Narrow',sans-serif;font-weight:700;font-size:15px;letter-spacing:0.16em;text-transform:uppercase;cursor:pointer" style-hover="background:#F3EDE3">Request the hold</button>
+        <p style="margin:0;font-size:13px;color:#6E665B">{{ formNote }}</p>
+      </form>
+      </div>
+    </div>
+  </section>
+
+  <sc-if value="{{ showSitemap }}" hint-placeholder-val="{{ true }}">
+    <section aria-labelledby="sitemap-title" style="border-top:1px solid #26221D;background:#0C0B0A">
+      <div style="max-width:1400px;margin:0 auto;padding:clamp(48px,7vw,96px) clamp(16px,4vw,48px)">
+        <div style="display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:20px;margin-bottom:clamp(24px,3vw,40px)">
+          <div>
+            <p style="margin:0 0 12px;font-family:'Archivo Narrow',sans-serif;font-size:12px;letter-spacing:0.28em;text-transform:uppercase;color:#FF3B20">Appendix — not part of the page</p>
+            <h2 id="sitemap-title" style="margin:0;font-family:'Archivo Black',sans-serif;font-size:clamp(26px,3.4vw,44px);line-height:0.95;letter-spacing:-0.03em;text-transform:uppercase">Proposed site map</h2>
+          </div>
+          <p style="margin:0;max-width:46ch;font-size:15px;line-height:1.55;color:#8E877D;text-wrap:pretty">Flat and crawlable: every room type gets a real URL with its own text, gear list, rates and booking form. Location pages are the second entry point, not a filter.</p>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr));gap:1px;background:#26221D;border:1px solid #26221D">
+          <nav aria-label="Site map: studios" style="background:#121110;padding:26px">
+            <h3 style="margin:0 0 14px;font-family:'Archivo Narrow',sans-serif;font-size:12px;letter-spacing:0.2em;text-transform:uppercase;color:#FF3B20">/studios</h3>
+            <ul style="margin:0;padding:0;list-style:none;display:grid;gap:9px;font-size:15px;color:#D8D1C6">
+              <li>/recording</li>
+              <li style="padding-left:14px;color:#8E877D">/recording/studio-a · /studio-b · /studio-c</li>
+              <li style="padding-left:14px;color:#8E877D">/recording/gear-list</li>
+              <li>/rehearsal</li>
+              <li style="padding-left:14px;color:#8E877D">/rehearsal/elite · /standard · /rates</li>
+              <li>/stage-suite</li>
+              <li style="padding-left:14px;color:#8E877D">/stage-suite/showcases · /theatre-blocking</li>
+              <li>/podcast</li>
+              <li>/film-tv-video</li>
+              <li style="padding-left:14px;color:#8E877D">/film-tv-video/live-streaming · /editing</li>
+              <li>/event-space</li>
+              <li>/equipment-rental</li>
+            </ul>
+          </nav>
+          <nav aria-label="Site map: locations" style="background:#121110;padding:26px">
+            <h3 style="margin:0 0 14px;font-family:'Archivo Narrow',sans-serif;font-size:12px;letter-spacing:0.2em;text-transform:uppercase;color:#FF3B20">/locations</h3>
+            <ul style="margin:0;padding:0;list-style:none;display:grid;gap:9px;font-size:15px;color:#D8D1C6">
+              <li>/new-york</li>
+              <li style="padding-left:14px;color:#8E877D">/new-york/rooms — index of all NYC rooms</li>
+              <li style="padding-left:14px;color:#8E877D">/new-york/getting-here — transit, load-in, parking</li>
+              <li style="padding-left:14px;color:#8E877D">/new-york/hours-rates</li>
+              <li>/chicago</li>
+              <li style="padding-left:14px;color:#8E877D">/chicago/rooms</li>
+              <li style="padding-left:14px;color:#8E877D">/chicago/getting-here</li>
+              <li style="padding-left:14px;color:#8E877D">/chicago/hours-rates</li>
+            </ul>
+            <h3 style="margin:24px 0 14px;font-family:'Archivo Narrow',sans-serif;font-size:12px;letter-spacing:0.2em;text-transform:uppercase;color:#FF3B20">/education</h3>
+            <ul style="margin:0;padding:0;list-style:none;display:grid;gap:9px;font-size:15px;color:#D8D1C6">
+              <li>/education/adult-bands</li>
+              <li>/education/youth-programs</li>
+              <li>/education/private-lessons</li>
+              <li>/education/calendar</li>
+            </ul>
+          </nav>
+          <nav aria-label="Site map: proof" style="background:#121110;padding:26px">
+            <h3 style="margin:0 0 14px;font-family:'Archivo Narrow',sans-serif;font-size:12px;letter-spacing:0.2em;text-transform:uppercase;color:#FF3B20">Proof &amp; story</h3>
+            <ul style="margin:0;padding:0;list-style:none;display:grid;gap:9px;font-size:15px;color:#D8D1C6">
+              <li>/about — since 1989, the rooms, the crew</li>
+              <li>/clients — notable client list</li>
+              <li>/press — Village Voice, MTV, features</li>
+              <li>/testimonials</li>
+              <li>/gallery</li>
+              <li style="padding-left:14px;color:#8E877D">/gallery/rooms · /gear · /performances</li>
+              <li>/reel — studio tours and live footage</li>
+              <li>/journal — sessions, artist notes, gear</li>
+            </ul>
+          </nav>
+          <nav aria-label="Site map: booking and utility" style="background:#121110;padding:26px">
+            <h3 style="margin:0 0 14px;font-family:'Archivo Narrow',sans-serif;font-size:12px;letter-spacing:0.2em;text-transform:uppercase;color:#FF3B20">Booking &amp; utility</h3>
+            <ul style="margin:0;padding:0;list-style:none;display:grid;gap:9px;font-size:15px;color:#D8D1C6">
+              <li>/book — one form, room and city preselected from any CTA</li>
+              <li style="padding-left:14px;color:#8E877D">/book/rehearsal · /recording · /stage · /podcast · /event</li>
+              <li>/rates — every room, one table</li>
+              <li>/contact — phones, email, staff</li>
+              <li>/policies — deposits, cancellation, house rules</li>
+              <li>/faq</li>
+              <li>/careers</li>
+              <li style="color:#6E665B">/sitemap.xml · schema.org LocalBusiness + MusicVenue per location</li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </section>
+  </sc-if>
+
+  <footer style="border-top:1px solid #26221D;background:#100E0C">
+    <div style="max-width:1400px;margin:0 auto;padding:clamp(40px,5vw,72px) clamp(16px,4vw,48px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:clamp(24px,3vw,48px)">
+      <div style="display:flex;flex-direction:column;gap:12px">
+        <span style="font-family:'Archivo Black',sans-serif;font-size:26px;text-transform:uppercase;letter-spacing:-0.02em">Smash Studios</span>
+        <p style="margin:0;font-size:15px;line-height:1.5;color:#8E877D">Music and entertainment production since 1989. New York City and Chicago.</p>
+      </div>
+      <div>
+        <h2 style="margin:0 0 12px;font-family:'Archivo Narrow',sans-serif;font-size:12px;letter-spacing:0.2em;text-transform:uppercase;color:#6E665B">Studios</h2>
+        <ul style="margin:0;padding:0;list-style:none;display:grid;gap:8px;font-size:15px">
+          <li><a href="#services" style="color:#D8D1C6">Recording</a></li>
+          <li><a href="#services" style="color:#D8D1C6">Rehearsal</a></li>
+          <li><a href="#services" style="color:#D8D1C6">Stage Suite</a></li>
+          <li><a href="#services" style="color:#D8D1C6">Podcast</a></li>
+          <li><a href="#services" style="color:#D8D1C6">Film, TV &amp; video</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2 style="margin:0 0 12px;font-family:'Archivo Narrow',sans-serif;font-size:12px;letter-spacing:0.2em;text-transform:uppercase;color:#6E665B">New York</h2>
+        <address style="font-style:normal;font-size:15px;line-height:1.6;color:#D8D1C6">320 W 37th St, 11th Floor<br>New York, NY 10018<br>(212) 561-7777<br>Mon&#8211;Fri 9a&#8211;11p<br>Sat&#8211;Sun 10a&#8211;10p</address>
+      </div>
+      <div>
+        <h2 style="margin:0 0 12px;font-family:'Archivo Narrow',sans-serif;font-size:12px;letter-spacing:0.2em;text-transform:uppercase;color:#6E665B">Chicago</h2>
+        <address style="font-style:normal;font-size:15px;line-height:1.6;color:#D8D1C6">Address to confirm<br>Chicago, IL<br>Phone to confirm<br>Hours to confirm</address>
+      </div>
+    </div>
+    <div style="border-top:1px solid #26221D;padding:18px clamp(16px,4vw,48px);display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;font-family:'Archivo Narrow',sans-serif;font-size:12px;letter-spacing:0.12em;text-transform:uppercase;color:#6E665B">
+      <span>&#169; 1989&#8211;2026 Smash Studios</span>
+      <span>Concept design · homepage + site map</span>
+    </div>
+  </footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;showSitemap&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Concept&quot;},&quot;showMarquee&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Concept&quot;}}">
+class Component extends DCLogic {
+  state = { sent: false };
+  renderVals() {
+    return {
+      showSitemap: this.props.showSitemap ?? true,
+      showMarquee: this.props.showMarquee ?? true,
+      formNote: this.state.sent
+        ? "Request sent — a studio manager replies within one business hour."
+        : "No deposit at this step. We hold the room while you confirm.",
+      onSubmit: (e) => { e.preventDefault(); this.setState({ sent: true }); }
+    };
+  }
+}
+</script>
+</body>
+</html>
